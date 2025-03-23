@@ -10,7 +10,7 @@ export const sendConfirmationEmail = async (email) => {
             },
         });
 
-        const confirmationLink = `http://localhost:5173/confirm/${email}`;
+        const confirmationLink = `${process.env.CLIENT_URL}/confirm/${email}`;
 
         await transporter.sendMail({
             from: `"Your Newsletter" <${process.env.EMAIL_USER}>`,
